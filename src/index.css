@@ -1,0 +1,24 @@
+body {
+  /* background-image: url(./icons/logo_background.png); */
+  background-color: grey;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: auto;
+  max-width: 100rem;
+  padding: 1rem;
+}
+
+/* Video Output */
+#video {
+  display: flex;
+  border-radius: 5%;
+  width: 700px;
+  height: 500px;
+}
+
+#canvas {
+  display: flex;
+  border-radius: 5%;
+  width: 700px;
+  height: 500px;
+}

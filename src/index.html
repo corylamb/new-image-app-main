@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Order Picture</title>
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+
+    
+
+  </head>
+  <body>
+    <h1 class="text-center p-3">Order Pic</h1>
+    <div class="container text-center" id="camera">
+      <div class="row">
+        <div class="col">
+          <div>
+            <button class="rounded btn btn-primary w-50 h-10 btn-lg" id="start-camera">Start Camera</button>
+          </div>
+          <div>
+            <video ref="vid" class="p-2 img-fluid" id="video" width="2560" height="1440" autoplay></video>
+            <input type="range">
+          </div>
+        </div>
+        <div class="col">
+          <div>
+            <button class="rounded btn btn-primary w-50 h-10 btn-lg" id="click-photo">Click Photo</button>
+          </div>
+          <div>
+            <canvas class="p-2 img-fluid" id="canvas" width="2560" height="1440" autoplay></canvas>
+          </div>
+        </div>
+      </div>
+  <!-- the forms start here  -->
+      <div>
+        <form id="form" action="/" method="Post" enctype="text/plain">
+          <!-- <label for="orderNumber">Order Number</label>
+            <input class="form-control input" type="number" id="orderNumber" placeholder="Order Number"> -->
+  
+          <div class="p-3">
+            <button class="rounded btn btn-primary w-25 h-10 btn-lg"  id="search" type="submit" value="Submit"> Search </button>
+          </div>
+  
+          <label for="patient#">Patient Number:</label>
+            <input class="form-control input" type="number"  id="patientnumber" placeholder="Patient #" />
+          
+          <label for="name">First and Last Name:</label>
+            <input class="form-control input" type="text"  id="name" placeholder="Name" />
+  
+          <label for="dos">Date of Service:</label>
+            <input class="form-control" type="date"  id="dos" placeholder="mm-dd-yyyy" value="" min="01-01-1997"
+            max="12-31-2045" />
+        </form>
+  
+        <div class="p-3">
+            <button class="rounded btn btn-primary w-25 h-10 btn-lg" id="download" type="submit" value="Submit" >Save!</button>
+          </div> 
+      </div>    
+     <script src="render.js"></script>
+  </body>
+</html>

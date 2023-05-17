@@ -5,14 +5,11 @@ const sql = require('mssql');
 
 app.post('/search', (req, res) => {
     const config = {
-        user:'cory.lamb',
-        password:'Sh33p1485',
         server:'ssi_server1',
-        database:'Advanced',
-        options: {
-            encript: true
-        }
-    };
+        database:'Advanced', 
+        user:'cory.lamb',
+        password:'Sh33p1485'
+        };
 
     const searchTerm = req.body.searchTerm;
     let sqlQuery = `SELECT * FROM dbo.AT_Orders = '${searchTerm}'`;

@@ -1,3 +1,5 @@
+
+
 let camera_button = document.querySelector('#start-camera');
 const download = document.getElementById('download');
 let video = document.querySelector('#video');
@@ -7,7 +9,7 @@ var Name = document.getElementById('name');
 var PatientNumber = document.getElementById('patientnumber');
 var DOS = document.getElementById('dos');
 const Form = document.querySelector('form');
-const OrderNumber = document.getElementById('orderNumber')
+const OrderNumber = document.getElementById('orderNumber');
 
 
 
@@ -27,6 +29,8 @@ camera_button.addEventListener('click', async function() {
     let stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false});
     video.srcObject = stream;
 });
+
+
 // Zoom feature
 navigator.mediaDevices.getUserMedia({ video: { zoom: true }})
     .then(mediaStream => {
@@ -59,10 +63,10 @@ navigator.mediaDevices.getUserMedia({ video: { zoom: true }})
 
 // Take Picture
 click_button.addEventListener('click', function() {
-    canvas.getContext('2d', { alpha: false }).drawImage(video, 0, 0, canvas.width, canvas.height);
-    canvas.imageSmoothingEnabled = false;
+    canvas.getContext('2d', { alpha: true }).drawImage(video, 0, 0, canvas.width, canvas.height);
+    canvas.imageSmoothingEnabled = true;
     canvas.imageSmoothingQuality = "high";
-    let image_data_url = canvas.toDataURL('image/png');
+    const dataURL = canvas.toDataURL('image/png');
    
  
     
@@ -98,26 +102,26 @@ download.addEventListener('click', function(e) {
 
 //  this is the search form to find the information from the server. 
 
-// // TODO finish the connect to the server 
-// Form.addEventListener('submit', searchit => {
-//     searchit.preventDefault();
+// TODO finish the connect to the server 
+Form.addEventListener('submit', searchit => {
+    searchit.preventDefault();
 
-//     const searchTerm = OrderNumber.value;
+    const searchTerm = OrderNumber.value;
 
-//     fetch('./Server/server.js', {
-//         method: 'Post',
-//         headers: {
-//             'Content-Type': application/octet-stream
-//         },
-//         body: JSON.stringify({ searchTerm })
-//     })
-//     .then(res => res.json())
-//     .then(data => {
-//         Name.Value = data.PatientName,
-//         PatientNumber.Value = data.PatientNum,
-//         DOS.Value = data.ShipDate
+    fetch('./Server/server.js', {
+        method: 'Post',
+        headers: {
+            'Content-Type': application/json
+        },
+        body: JSON.stringify({ searchTerm })
+    })
+    .then(res => res.json())
+    .then(data => {
+        Name.Value = data.PatientName,
+        PatientNumber.Value = data.PatientNum,
+        DOS.Value = data.ShipDate
 
-//       // Populate the form fields with the data received from the server
-//     })
-//     .catch(err => console.log(err));
-// })
+      // Populate the form fields with the data received from the server
+    })
+    .catch(err => console.log(err));
+})

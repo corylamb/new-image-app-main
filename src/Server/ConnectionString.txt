@@ -1,0 +1,1 @@
+"Server=./ssi_server1;Database=Advanded;User ID=CORP\cory.lamb;Password=Sh33p1485"

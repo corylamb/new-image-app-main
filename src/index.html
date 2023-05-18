@@ -40,22 +40,23 @@
   <!-- the forms start here  -->
       <div>
         <form id="form" action="/" method="Post" enctype="application/json">
-          <!-- <label for="orderNumber">Order Number</label>
-            <input class="form-control input" type="number" id="orderNumber" placeholder="Order Number">
+          <label for="orderNumber">Order Number</label>
+            <input class="form-control input" type="number" id="search-term" placeholder="Order Number">
   
           <div class="p-3">
-            <button class="rounded btn btn-primary w-25 h-10 btn-lg"  id="search" type="submit" value="Submit"> Search </button>
-          </div> -->
-  
-          <label for="patient#">Patient Number:</label>
-            <input class="form-control input" type="number"  id="patientnumber" placeholder="Patient #" />
+            <button class="rounded btn btn-primary w-25 h-10 btn-lg"  id="search" type="submit" onclick="search()" value="Submit"> Search </button>
+          </div>
+          <div id="results">
+            <label for="patient#">Patient Number:</label>
+              <input class="form-control input" type="number"  id="patientnumber" placeholder="Patient #" />
           
-          <label for="name">First and Last Name:</label>
-            <input class="form-control input" type="text"  id="name" placeholder="Name" />
+            <label for="name">First and Last Name:</label>
+              <input class="form-control input" type="text"  id="name" placeholder="Name" />
   
-          <label for="dos">Date of Service:</label>
-            <input class="form-control" type="date"  id="dos" placeholder="mm-dd-yyyy" value="" min="01-01-1997"
-            max="12-31-2045" />
+            <label for="dos">Date of Service:</label>
+              <input class="form-control" type="date"  id="dos" placeholder="mm-dd-yyyy" value="" min="01-01-1997"
+               max="12-31-2045" />
+          </div>
         </form>
   
         <div class="p-3">
@@ -63,5 +64,6 @@
           </div> 
       </div>    
      <script src="render.js"></script>
+     <script src="Server/server.js"></script>
   </body>
 </html>

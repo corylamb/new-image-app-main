@@ -1,5 +1,3 @@
-
-
 let camera_button = document.querySelector('#start-camera');
 const download = document.getElementById('download');
 let video = document.querySelector('#video');
@@ -102,26 +100,26 @@ download.addEventListener('click', function(e) {
 
 //  this is the search form to find the information from the server. 
 
-// TODO finish the connect to the server 
-Form.addEventListener('submit', searchit => {
-    searchit.preventDefault();
+// // TODO finish the connect to the server 
+// Form.addEventListener('submit', searchit => {
+//     searchit.preventDefault();
 
-    const searchTerm = OrderNumber.value;
+//     const searchTerm = OrderNumber.value;
 
-    fetch('./Server/server.js', {
-        method: 'Post',
-        headers: {
-            'Content-Type': application/json
-        },
-        body: JSON.stringify({ searchTerm })
-    })
-    .then(res => res.json())
-    .then(data => {
-        Name.Value = data.PatientName,
-        PatientNumber.Value = data.PatientNum,
-        DOS.Value = data.ShipDate
+//     fetch('./Server/server.js', {
+//         method: 'Post',
+//         headers: {
+//             'Content-Type': application/json
+//         },
+//         body: JSON.stringify({ searchTerm })
+//     })
+//     .then(res => res.json())
+//     .then(data => {
+//         Name.Value = data.PatientName,
+//         PatientNumber.Value = data.PatientNum,
+//         DOS.Value = data.ShipDate
 
-      // Populate the form fields with the data received from the server
-    })
-    .catch(err => console.log(err));
-})
+//       // Populate the form fields with the data received from the server
+//     })
+//     .catch(err => console.log(err));
+// })

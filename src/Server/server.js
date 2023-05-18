@@ -11,8 +11,7 @@ const pool = new mssql.ConnectionPool(connectionString);
 // Create a search function
 function search() {
     const searchTerm = document.getElementById('searchTerm').value;
-     SELECT * FROM dbo.AT_orders, WHERE ID, LIKE "%${searchTerm}%';
-    const 
+    const query = `SELECT * FROM dbo.AT_orders, WHERE ID, LIKE "%${searchTerm}%"`;
 
 
 
@@ -24,8 +23,8 @@ function search() {
  // Populate the results in the HTML input forms
     const results = rows.map(row => {
         return
-        <input type="number" id="patientnumber" value="${row.Patientnum}" /> 
-        <input type="text"  id="name" value="${row.PateintName}" />
+        <input type="number" id="patientnumber" value="${row.Patientnum}" />, 
+        <input type="text"  id="name" value="${row.PateintName}" />,
         <input type="date"  id="dos" value="${row.Created}" />
        }) ;
 

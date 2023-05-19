@@ -4,7 +4,7 @@ const mssql = require('mssql');
 const ejs = require('ejs');
 
 // Connect to the database
-const connectionString = Server=ssi_server1; Database=Advanded; User ID=CORP\cory.lamb; Password=Sh33p1485;
+const connectionString = Server=ssi_server1; Database=Advanded; UserID = cory.lamb; Password=Sh33p1485;
 
 const pool = new mssql.ConnectionPool(connectionString);
 
